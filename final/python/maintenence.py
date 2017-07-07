@@ -155,7 +155,81 @@ class Ui_Maintenance(object):
 #############################################################################################################    
 
     def Node1(self):
-        print ("ello")
+        self.NODE1.setStyleSheet("background-color: rgb(166, 229, 149);\n"
+"border-color:  rgb(166, 229, 149);\n"
+"color: rgb(64, 98, 72);")
+        self.NODE2.setStyleSheet("background-color: rgb(108, 181, 85);\n"
+"color: rgb(255, 255, 255);\n"
+"border-color: rgb(255, 255, 255);\n"
+"selection-color: rgb(85, 255, 0);")
+        self.NODE3.setStyleSheet("background-color: rgb(108, 181, 85);\n"
+"color: rgb(255, 255, 255);\n"
+"border-color: rgb(255, 255, 255);\n"
+"selection-color: rgb(85, 255, 0);")
+        self.NODE4.setStyleSheet("background-color: rgb(108, 181, 85);\n"
+"color: rgb(255, 255, 255);\n"
+"border-color: rgb(255, 255, 255);\n"
+"selection-color: rgb(85, 255, 0);")
+
+
+
+
+
+
+    def Node2(self):
+        self.NODE2.setStyleSheet("background-color: rgb(166, 229, 149);\n"
+"border-color:  rgb(166, 229, 149);\n"
+"color: rgb(64, 98, 72);")
+        self.NODE1.setStyleSheet("background-color: rgb(108, 181, 85);\n"
+"color: rgb(255, 255, 255);\n"
+"border-color: rgb(255, 255, 255);\n")
+        self.NODE3.setStyleSheet("background-color: rgb(108, 181, 85);\n"
+"color: rgb(255, 255, 255);\n"
+"border-color: rgb(255, 255, 255);\n")
+        self.NODE4.setStyleSheet("background-color: rgb(108, 181, 85);\n"
+"color: rgb(255, 255, 255);\n"
+"border-color: rgb(255, 255, 255);\n")
+
+
+    def Node4(self):
+        self.NODE3.setStyleSheet("background-color: rgb(166, 229, 149);\n"
+"border-color:  rgb(166, 229, 149);\n"
+"color: rgb(64, 98, 72);")
+        self.NODE1.setStyleSheet("background-color: rgb(108, 181, 85);\n"
+"color: rgb(255, 255, 255);\n"
+"border-color: rgb(255, 255, 255);\n")
+        self.NODE2.setStyleSheet("background-color: rgb(108, 181, 85);\n"
+"color: rgb(255, 255, 255);\n"
+"border-color: rgb(255, 255, 255);\n")
+        self.NODE4.setStyleSheet("background-color: rgb(108, 181, 85);\n"
+"color: rgb(255, 255, 255);\n"
+"border-color: rgb(255, 255, 255);\n")
+
+    def Node3(self):
+        self.NODE4.setStyleSheet("background-color: rgb(166, 229, 149);\n"
+"border-color:  rgb(166, 229, 149);\n"
+"color: rgb(64, 98, 72);")
+        self.NODE1.setStyleSheet("background-color: rgb(108, 181, 85);\n"
+"color: rgb(255, 255, 255);\n"
+"border-color: rgb(255, 255, 255);\n")
+        self.NODE2.setStyleSheet("background-color: rgb(108, 181, 85);\n"
+"color: rgb(255, 255, 255);\n"
+"border-color: rgb(255, 255, 255);\n")
+        self.NODE3.setStyleSheet("background-color: rgb(108, 181, 85);\n"
+"color: rgb(255, 255, 255);\n"
+"border-color: rgb(255, 255, 255);\n")
+
+    def Home(self):
+    	print("llo")
+    def Lamp_off(self):
+    	print("llo")
+    def Lamp_on(self):
+    	print("llo")
+    def Fan_on(self):
+    	print("llo")
+    def Fan_off(self):
+    	print("llo")
+        
 
 
 if __name__ == "__main__":
