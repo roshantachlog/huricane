@@ -9,16 +9,16 @@
 
 from PyQt5 import QtCore, QtGui, QtWidgets
 
-class Ui_MainWindow(object):
-    def setupUi(self, MainWindow):
-        MainWindow.setObjectName("MainWindow")
-        MainWindow.setEnabled(True)
-        MainWindow.resize(800, 480)
-        MainWindow.setSizeIncrement(QtCore.QSize(1, 1))
-        MainWindow.setStyleSheet("background-color: rgb(255, 255, 255);\n"
+class Ui_Home(object):
+    def setupUi(self, Home):
+        Home.setObjectName("Home")
+        Home.setEnabled(True)
+        Home.resize(800, 480)
+        Home.setSizeIncrement(QtCore.QSize(1, 1))
+        Home.setStyleSheet("background-color: rgb(255, 255, 255);\n"
 "border-color: rgb(255, 255, 255);")
-        MainWindow.setIconSize(QtCore.QSize(65, 65))
-        self.centralWidget = QtWidgets.QWidget(MainWindow)
+        Home.setIconSize(QtCore.QSize(65, 65))
+        self.centralWidget = QtWidgets.QWidget(Home)#MainWindow
         self.centralWidget.setObjectName("centralWidget")
         self.MAINTENANCE = QtWidgets.QPushButton(self.centralWidget)
         self.MAINTENANCE.setGeometry(QtCore.QRect(80, 290, 71, 71))
@@ -31,7 +31,7 @@ class Ui_MainWindow(object):
 "border-style: solid;")
         self.MAINTENANCE.setText("")
         icon = QtGui.QIcon()
-        icon.addPixmap(QtGui.QPixmap("../../ui/finals/icons/Final/Home/maintanence.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        icon.addPixmap(QtGui.QPixmap("../icons/Home/maintanence.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
         self.MAINTENANCE.setIcon(icon)
         self.MAINTENANCE.setIconSize(QtCore.QSize(65, 65))
         self.MAINTENANCE.setObjectName("MAINTENANCE")
@@ -41,7 +41,7 @@ class Ui_MainWindow(object):
 "background-color: rgb(255, 255, 255);")
         self.SCHEDULE.setText("")
         icon1 = QtGui.QIcon()
-        icon1.addPixmap(QtGui.QPixmap("../../ui/finals/icons/Final/Home/schedule.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        icon1.addPixmap(QtGui.QPixmap("../icons/Home/schedule.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
         self.SCHEDULE.setIcon(icon1)
         self.SCHEDULE.setIconSize(QtCore.QSize(70, 70))
         self.SCHEDULE.setObjectName("SCHEDULE")
@@ -51,7 +51,7 @@ class Ui_MainWindow(object):
 "background-color: rgb(255, 255, 255);")
         self.STATUS.setText("")
         icon2 = QtGui.QIcon()
-        icon2.addPixmap(QtGui.QPixmap("../../ui/finals/icons/Final/Home/status.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        icon2.addPixmap(QtGui.QPixmap("../icons/Home/status.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
         self.STATUS.setIcon(icon2)
         self.STATUS.setIconSize(QtCore.QSize(60, 60))
         self.STATUS.setObjectName("STATUS")
@@ -61,7 +61,7 @@ class Ui_MainWindow(object):
 "background-color: rgb(255, 255, 255);")
         self.LAMP_LIFE.setText("")
         icon3 = QtGui.QIcon()
-        icon3.addPixmap(QtGui.QPixmap("../../ui/finals/icons/Final/Home/bulb_life.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        icon3.addPixmap(QtGui.QPixmap("../icons/Home/bulb_life.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
         self.LAMP_LIFE.setIcon(icon3)
         self.LAMP_LIFE.setIconSize(QtCore.QSize(65, 65))
         self.LAMP_LIFE.setObjectName("LAMP_LIFE")
@@ -71,7 +71,7 @@ class Ui_MainWindow(object):
 "background-color: rgb(255, 255, 255);")
         self.ABOUT.setText("")
         icon4 = QtGui.QIcon()
-        icon4.addPixmap(QtGui.QPixmap("../../ui/finals/icons/Final/Home/about.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        icon4.addPixmap(QtGui.QPixmap("../icons/Home/about.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
         self.ABOUT.setIcon(icon4)
         self.ABOUT.setIconSize(QtCore.QSize(56, 56))
         self.ABOUT.setObjectName("ABOUT")
@@ -143,55 +143,56 @@ class Ui_MainWindow(object):
         self.frame_5.setObjectName("frame_5")
         self.label_7 = QtWidgets.QLabel(self.centralWidget)
         self.label_7.setGeometry(QtCore.QRect(240, 30, 291, 121))
-        self.label_7.setStyleSheet("image:url(\'/home/tachlog/Desktop/hurricanenew/final/icons/Home/hurricane-logo-retina.png\');")
+        self.label_7.setStyleSheet("image:url(\'../icons/Home/hurricane-logo-retina.png\');")
         self.label_7.setText("")
         self.label_7.setObjectName("label_7")
-        self.pushButton = QtWidgets.QPushButton(self.centralWidget)
-        self.pushButton.setGeometry(QtCore.QRect(720, 20, 51, 51))
-        self.pushButton.setStyleSheet("border:0px;")
-        self.pushButton.setText("")
+        self.shutdown = QtWidgets.QPushButton(self.centralWidget)
+        self.shutdown.setGeometry(QtCore.QRect(720, 20, 51, 51))
+        self.shutdown.setStyleSheet("border:0px;")
+        self.shutdown.setText("")
         icon5 = QtGui.QIcon()
-        icon5.addPixmap(QtGui.QPixmap("../final/icons/Home/shutdown_grey.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
-        self.pushButton.setIcon(icon5)
-        self.pushButton.setIconSize(QtCore.QSize(39, 46))
-        self.pushButton.setObjectName("pushButton")
+        icon5.addPixmap(QtGui.QPixmap("../icons/Home/shutdown_grey.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        self.shutdown.setIcon(icon5)
+        self.shutdown.setIconSize(QtCore.QSize(39, 46))
+        self.shutdown.setObjectName("pushButton")
         self.label_8 = QtWidgets.QLabel(self.centralWidget)
         self.label_8.setGeometry(QtCore.QRect(550, 280, 31, 29))
         self.label_8.setStyleSheet("image:url(\'/home/tachlog/Desktop/hurricanenew/final/icons/Home/warningred.png\');\n"
 "border:0px")
         self.label_8.setText("")
         self.label_8.setObjectName("label_8")
-        MainWindow.setCentralWidget(self.centralWidget)
-        self.menuBar = QtWidgets.QMenuBar(MainWindow)
-        self.menuBar.setGeometry(QtCore.QRect(0, 0, 800, 34))
-        self.menuBar.setObjectName("menuBar")
-        MainWindow.setMenuBar(self.menuBar)
-        self.mainToolBar = QtWidgets.QToolBar(MainWindow)
-        self.mainToolBar.setObjectName("mainToolBar")
-        MainWindow.addToolBar(QtCore.Qt.TopToolBarArea, self.mainToolBar)
-        self.statusBar = QtWidgets.QStatusBar(MainWindow)
-        self.statusBar.setObjectName("statusBar")
-        MainWindow.setStatusBar(self.statusBar)
+        Home.setCentralWidget(self.centralWidget)
+       
+        self.retranslateUi(Home)
+        QtCore.QMetaObject.connectSlotsByName(Home)
 
-        self.retranslateUi(MainWindow)
-        QtCore.QMetaObject.connectSlotsByName(MainWindow)
-
-    def retranslateUi(self, MainWindow):
+    def retranslateUi(self,Home):
         _translate = QtCore.QCoreApplication.translate
-        MainWindow.setWindowTitle(_translate("MainWindow", "MainWindow"))
-        self.label.setText(_translate("MainWindow", "<html><head/><body><p><span style=\" font-size:18pt;\">M E N U</span></p></body></html>"))
-        self.label_2.setText(_translate("MainWindow", "MAINTENANCE"))
-        self.label_3.setText(_translate("MainWindow", "SCHEDULE"))
-        self.label_4.setText(_translate("MainWindow", "STATUS"))
-        self.label_5.setText(_translate("MainWindow", "LAMP LIFE"))
-        self.label_6.setText(_translate("MainWindow", "ABOUT"))
+        Home.setWindowTitle(_translate("Home", "Home"))
+        self.label.setText(_translate("Home", "<html><head/><body><p><span style=\" font-size:18pt;\">M E N U</span></p></body></html>"))
+        self.label_2.setText(_translate("Home", "MAINTENANCE"))
+        self.label_3.setText(_translate("Home", "SCHEDULE"))
+        self.label_4.setText(_translate("Home", "STATUS"))
+        self.label_5.setText(_translate("Home", "LAMP LIFE"))
+        self.label_6.setText(_translate("Home", "ABOUT"))
+        self.shutdown.clicked.connect(self.shutdown)
+
+
+
+    def shutdown(self):
+        ##############################
+        #add confirmation message box here
+        ##############################
+        import os
+        os.system('systemctl poweroff') 
+
 
 if __name__ == "__main__":
     import sys
     app = QtWidgets.QApplication(sys.argv)
-    MainWindow = QtWidgets.QMainWindow()
-    ui = Ui_MainWindow()
-    ui.setupUi(MainWindow)
-    MainWindow.show()
+    Home = QtWidgets.QMainWindow()
+    ui = Ui_Home()
+    ui.setupUi(Home)
+    Home.show()
     sys.exit(app.exec_())
 

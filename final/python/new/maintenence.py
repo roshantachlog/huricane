@@ -1,37 +1,39 @@
 # -*- coding: utf-8 -*-
 
 ####################################################################################################################
-# environment :- python, PyQt5
-# auther      :- Muhammed Roshan
-# company     :- Tachlog
-# Created: Fri Jul  7 12:31:00 2017
+# Environment :- python3, PyQt5 ,SQLite database
+# Auther      :- Muhammed Roshan
+# Company     :- Tachlog
+# Created     :- Fri Jul  7 12:31:00 2017
 #      
-#
-#
+# This program allows the individual controll of each node for maintenance purpose.
+# The user can mannually switch ON/OFF the Fan and UV lamp of any node individually.
+
 ####################################################################################################################
 
-from PyQt5 import QtCore, QtGui, QtWidgets
+from PyQt5 import QtCore,QtGui,QtWidgets
+from Home import Ui_Home
 
-class Ui_MainWindow(object):
-    def setupUi(self, MainWindow):
-        MainWindow.setObjectName("MainWindow")
-        MainWindow.resize(800, 480)
+class Ui_Maintenance(object):
+    def setupUi(self, Maintenance):
+        Maintenance.setObjectName("Maintenance")
+        Maintenance.resize(800, 480)
         font = QtGui.QFont()
         font.setPointSize(20)
-        MainWindow.setFont(font)
-        MainWindow.setStyleSheet("background-color: rgb(222, 231, 220);")
-        self.centralWidget = QtWidgets.QWidget(MainWindow)
+        Maintenance.setFont(font)
+        Maintenance.setStyleSheet("background-color: rgb(222, 231, 220);")
+        self.centralWidget = QtWidgets.QWidget(Maintenance)
         self.centralWidget.setObjectName("centralWidget")
         self.NODE1 = QtWidgets.QPushButton(self.centralWidget)
         self.NODE1.setGeometry(QtCore.QRect(0, 70, 171, 81))
-        self.NODE1.setStyleSheet("background-color: rgb(108, 181, 85);\n"
+        self.NODE1.setStyleSheet("background-color: rgb(166, 229, 149);\n"
 "color: rgb(255, 255, 255);\n"
 "border-color: rgb(255, 255, 255);\n"
 "selection-color: rgb(85, 255, 0);")
         self.NODE1.setObjectName("NODE1")
         self.NODE2 = QtWidgets.QPushButton(self.centralWidget)
         self.NODE2.setGeometry(QtCore.QRect(0, 150, 171, 81))
-        self.NODE2.setStyleSheet("background-color: rgb(166, 229, 149);\n"
+        self.NODE2.setStyleSheet("background-color: rgb(108, 181, 85);\n"
 "border-color:  rgb(166, 229, 149);\n"
 "color: rgb(64, 98, 72);")
         self.NODE2.setObjectName("NODE2")
@@ -64,7 +66,7 @@ class Ui_MainWindow(object):
         self.frame.setObjectName("frame")
         self.label_2 = QtWidgets.QLabel(self.centralWidget)
         self.label_2.setGeometry(QtCore.QRect(490, 0, 91, 61))
-        self.label_2.setStyleSheet("image:url(\'/home/tachlog/Desktop/ui/finals/icons/Final/Home/maintanence.png\');")
+        self.label_2.setStyleSheet("image:url(\'../icons/Home/maintanence.png\');")
         self.label_2.setText("")
         self.label_2.setObjectName("label_2")
         self.line = QtWidgets.QFrame(self.centralWidget)
@@ -74,75 +76,186 @@ class Ui_MainWindow(object):
         self.line.setObjectName("line")
         self.label_3 = QtWidgets.QLabel(self.centralWidget)
         self.label_3.setGeometry(QtCore.QRect(300, 120, 111, 111))
-        self.label_3.setStyleSheet("image:url(\'/home/tachlog/Desktop/hurricanenew/final/icons/maintanence/uv_lamp.png\');")
+        self.label_3.setStyleSheet("image:url(\'../icons/maintanence/uv_lamp.png\');")
         self.label_3.setText("")
         self.label_3.setObjectName("label_3")
         self.label_4 = QtWidgets.QLabel(self.centralWidget)
         self.label_4.setGeometry(QtCore.QRect(570, 120, 118, 111))
-        self.label_4.setStyleSheet("image:url(\'/home/tachlog/Desktop/hurricanenew/final/icons/maintanence/fan.png\');")
+        self.label_4.setStyleSheet("image:url(\'../icons/maintanence/fan.png\');")
         self.label_4.setText("")
         self.label_4.setObjectName("label_4")
         self.LAMP_ON = QtWidgets.QPushButton(self.centralWidget)
-        self.LAMP_ON.setGeometry(QtCore.QRect(280, 260, 51, 37))
+        self.LAMP_ON.setGeometry(QtCore.QRect(280, 260, 51, 70))
         self.LAMP_ON.setStyleSheet("background-color: rgb(0, 255,44);")
         self.LAMP_ON.setObjectName("LAMP_ON")
         self.FAN_OFF = QtWidgets.QPushButton(self.centralWidget)
-        self.FAN_OFF.setGeometry(QtCore.QRect(640, 260, 51, 37))
+        self.FAN_OFF.setGeometry(QtCore.QRect(640, 260, 51, 70))
         self.FAN_OFF.setStyleSheet("background-color: rgb(248, 0, 48);")
         self.FAN_OFF.setObjectName("FAN_OFF")
         self.FAN_ON = QtWidgets.QPushButton(self.centralWidget)
-        self.FAN_ON.setGeometry(QtCore.QRect(590, 260, 51, 37))
+        self.FAN_ON.setGeometry(QtCore.QRect(590, 260, 51, 70))
         self.FAN_ON.setStyleSheet("background-color: rgb(222, 231, 220);")
         self.FAN_ON.setObjectName("FAN_ON")
         self.LAMP_OFF = QtWidgets.QPushButton(self.centralWidget)
-        self.LAMP_OFF.setGeometry(QtCore.QRect(330, 260, 51, 37))
+        self.LAMP_OFF.setGeometry(QtCore.QRect(330, 260, 51, 70))
         self.LAMP_OFF.setStyleSheet("background-color:rgb(222, 231, 220);")
         self.LAMP_OFF.setObjectName("LAMP_OFF")
         self.HOME_BUTTON = QtWidgets.QPushButton(self.centralWidget)
-        self.HOME_BUTTON.setGeometry(QtCore.QRect(430, 346, 91, 41))
+        self.HOME_BUTTON.setGeometry(QtCore.QRect(430, 400, 91, 41))
         self.HOME_BUTTON.setStyleSheet("border:0px\n"
 "")
         self.HOME_BUTTON.setText("")
         icon = QtGui.QIcon()
-        icon.addPixmap(QtGui.QPixmap("../../final/icons/maintanence/home_button.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        icon.addPixmap(QtGui.QPixmap("../icons/maintanence/home_button.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
         self.HOME_BUTTON.setIcon(icon)
         self.HOME_BUTTON.setIconSize(QtCore.QSize(45, 45))
         self.HOME_BUTTON.setObjectName("HOME_BUTTON")
-        MainWindow.setCentralWidget(self.centralWidget)
-        self.menuBar = QtWidgets.QMenuBar(MainWindow)
-        self.menuBar.setGeometry(QtCore.QRect(0, 0, 800, 34))
-        self.menuBar.setObjectName("menuBar")
-        MainWindow.setMenuBar(self.menuBar)
-        self.mainToolBar = QtWidgets.QToolBar(MainWindow)
-        self.mainToolBar.setObjectName("mainToolBar")
-        MainWindow.addToolBar(QtCore.Qt.TopToolBarArea, self.mainToolBar)
-        self.statusBar = QtWidgets.QStatusBar(MainWindow)
-        self.statusBar.setObjectName("statusBar")
-        MainWindow.setStatusBar(self.statusBar)
+        Maintenance.setCentralWidget(self.centralWidget) #
+        self.retranslateUi(Maintenance)
+        QtCore.QMetaObject.connectSlotsByName(Maintenance)
 
-        self.retranslateUi(MainWindow)
-        QtCore.QMetaObject.connectSlotsByName(MainWindow)
-
-    def retranslateUi(self, MainWindow):
+    def retranslateUi(self, Maintenance):
         _translate = QtCore.QCoreApplication.translate
-        MainWindow.setWindowTitle(_translate("MainWindow", "MainWindow"))
-        self.NODE1.setText(_translate("MainWindow", "   NODE 1"))
-        self.NODE2.setText(_translate("MainWindow", "   NODE 2"))
-        self.NODE3.setText(_translate("MainWindow", "   NODE 3"))
-        self.NODE4.setText(_translate("MainWindow", "   NODE 4"))
-        self.label.setText(_translate("MainWindow", "MAINTANENCE"))
-        self.LAMP_ON.setText(_translate("MainWindow", "ON"))
-        self.FAN_OFF.setText(_translate("MainWindow", "OFF"))
-        self.FAN_ON.setText(_translate("MainWindow", "ON"))
-        self.LAMP_OFF.setText(_translate("MainWindow", "OFF"))
+        Maintenance.setWindowTitle(_translate("Maintenance", "Maintenance"))
+        self.NODE1.setText(_translate("Maintenance", "   NODE 1"))
+        self.NODE2.setText(_translate("Maintenance", "   NODE 2"))
+        self.NODE3.setText(_translate("Maintenance", "   NODE 3"))
+        self.NODE4.setText(_translate("Maintenance", "   NODE 4"))
+        self.label.setText(_translate("Maintenance", "MAINTANENCE"))
+        self.LAMP_ON.setText(_translate("Maintenance", "ON"))
+        self.FAN_OFF.setText(_translate("Maintenance", "OFF"))
+        self.FAN_ON.setText(_translate("Maintenance", "ON"))
+        self.LAMP_OFF.setText(_translate("Maintenance", "OFF"))
+
+
+#####################################
+#add funtions to switch off all lamps and fan
+#
+#####################################
+
+        # Function calling 
+        self.NODE1.clicked.connect(self.Node1)
+        self.NODE2.clicked.connect(self.Node2)
+        self.NODE3.clicked.connect(self.Node3)
+        self.NODE4.clicked.connect(self.Node4)
+        self.HOME_BUTTON.clicked.connect(self.Home)
+        self.LAMP_OFF.clicked.connect(self.Lamp_off)
+        self.LAMP_ON.clicked.connect(self.Lamp_on)
+        self.FAN_ON.clicked.connect(self.Fan_on)
+        self.FAN_OFF.clicked.connect(self.Fan_off)
+
+####################################################################################################################
+#
+#Function defenitions starts here
+# These fucntions will changes the appearance of each maintenance screen on pressing curresponding nodes
+# and it fetch the details of current status and display and we can change each element individually
+#
+####################################################################################################################    
+
+
+
+
+    def Node1(self):
+        self.NODE1.setStyleSheet("background-color: rgb(166, 229, 149);\n"
+"border-color:  rgb(166, 229, 149);\n"
+"color: rgb(64, 98, 72);")
+        self.NODE2.setStyleSheet("background-color: rgb(108, 181, 85);\n"
+"color: rgb(255, 255, 255);\n"
+"border-color: rgb(255, 255, 255);\n"
+"selection-color: rgb(85, 255, 0);")
+        self.NODE3.setStyleSheet("background-color: rgb(108, 181, 85);\n"
+"color: rgb(255, 255, 255);\n"
+"border-color: rgb(255, 255, 255);\n"
+"selection-color: rgb(85, 255, 0);")
+        self.NODE4.setStyleSheet("background-color: rgb(108, 181, 85);\n"
+"color: rgb(255, 255, 255);\n"
+"border-color: rgb(255, 255, 255);\n"
+"selection-color: rgb(85, 255, 0);")
+
+    def Node2(self):
+        self.NODE2.setStyleSheet("background-color: rgb(166, 229, 149);\n"
+"border-color:  rgb(166, 229, 149);\n"
+"color: rgb(64, 98, 72);")
+        self.NODE1.setStyleSheet("background-color: rgb(108, 181, 85);\n"
+"color: rgb(255, 255, 255);\n"
+"border-color: rgb(255, 255, 255);\n")
+        self.NODE3.setStyleSheet("background-color: rgb(108, 181, 85);\n"
+"color: rgb(255, 255, 255);\n"
+"border-color: rgb(255, 255, 255);\n")
+        self.NODE4.setStyleSheet("background-color: rgb(108, 181, 85);\n"
+"color: rgb(255, 255, 255);\n"
+"border-color: rgb(255, 255, 255);\n")
+
+    def Node3(self):
+        self.NODE3.setStyleSheet("background-color: rgb(166, 229, 149);\n"
+"border-color:  rgb(166, 229, 149);\n"
+"color: rgb(64, 98, 72);")
+        self.NODE1.setStyleSheet("background-color: rgb(108, 181, 85);\n"
+"color: rgb(255, 255, 255);\n"
+"border-color: rgb(255, 255, 255);\n")
+        self.NODE2.setStyleSheet("background-color: rgb(108, 181, 85);\n"
+"color: rgb(255, 255, 255);\n"
+"border-color: rgb(255, 255, 255);\n")
+        self.NODE4.setStyleSheet("background-color: rgb(108, 181, 85);\n"
+"color: rgb(255, 255, 255);\n"
+"border-color: rgb(255, 255, 255);\n")
+
+    def Node4(self):
+        self.NODE4.setStyleSheet("background-color: rgb(166, 229, 149);\n"
+"border-color:  rgb(166, 229, 149);\n"
+"color: rgb(64, 98, 72);")
+        self.NODE1.setStyleSheet("background-color: rgb(108, 181, 85);\n"
+"color: rgb(255, 255, 255);\n"
+"border-color: rgb(255, 255, 255);\n")
+        self.NODE2.setStyleSheet("background-color: rgb(108, 181, 85);\n"
+"color: rgb(255, 255, 255);\n"
+"border-color: rgb(255, 255, 255);\n")
+        self.NODE3.setStyleSheet("background-color: rgb(108, 181, 85);\n"
+"color: rgb(255, 255, 255);\n"
+"border-color: rgb(255, 255, 255);\n")
+
+
+####################################################################################################################
+# This function navigate to Home screen on click
+#
+####################################################################################################################
+    def Home(self):
+    	print("home")
+    	Maintenance.close()
+    	#add code fragment to open home screen
+
+    def Lamp_off(self):
+    	print("lamp off")
+    	self.LAMP_OFF.setStyleSheet("background-color:rgb(248, 0, 48);")  #pink color
+    	self.LAMP_ON.setStyleSheet("background-color: rgb(222, 231, 220);") # grey color
+
+    def Lamp_on(self):
+    	print("lamp on")
+    	self.LAMP_ON.setStyleSheet("background-color:rgb(0, 255,44);") #green
+    	self.LAMP_OFF.setStyleSheet("background-color: rgb(222, 231, 220);") #grey color
+
+    def Fan_on(self):
+    	print("fan on")
+    	self.FAN_ON.setStyleSheet("background-color:rgb(0, 255,44);") #green
+    	self.FAN_OFF.setStyleSheet("background-color: rgb(222, 231, 220);") #grey color
+
+
+    def Fan_off(self):
+    	print("fan off")
+    	self.FAN_OFF.setStyleSheet("background-color:rgb(248, 0, 48);")  #pink color
+    	self.FAN_ON.setStyleSheet("background-color: rgb(222, 231, 220);") # grey color
+###################################################################################################
+# In the above code fragment add communication modules ,change DataBase and 
+#
+###################################################################################################        
 
 
 if __name__ == "__main__":
     import sys
     app = QtWidgets.QApplication(sys.argv)
-    MainWindow = QtWidgets.QMainWindow()
-    ui = Ui_MainWindow()
-    ui.setupUi(MainWindow)
-    MainWindow.show()
+    Maintenance = QtWidgets.QMainWindow()
+    ui = Ui_Maintenance()
+    ui.setupUi(Maintenance)
+    Maintenance.show()
     sys.exit(app.exec_())
 
