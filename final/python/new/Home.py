@@ -9,16 +9,22 @@
 
 from PyQt5 import QtCore, QtGui, QtWidgets
 
-class Ui_Home(object):
-    def setupUi(self, Home):
-        Home.setObjectName("Home")
-        Home.setEnabled(True)
-        Home.resize(800, 480)
-        Home.setSizeIncrement(QtCore.QSize(1, 1))
-        Home.setStyleSheet("background-color: rgb(255, 255, 255);\n"
+class Ui_Home(QtWidgets.QMainWindow):
+    def __init__(self):
+        super().__init__()
+ 
+        self.init_ui()
+ 
+
+    def init_ui(self):
+        self.setObjectName("Home")
+        self.setEnabled(True)
+        self.resize(800, 480)
+        self.setSizeIncrement(QtCore.QSize(1, 1))
+        self.setStyleSheet("background-color: rgb(255, 255, 255);\n"
 "border-color: rgb(255, 255, 255);")
-        Home.setIconSize(QtCore.QSize(65, 65))
-        self.centralWidget = QtWidgets.QWidget(Home)#MainWindow
+        self.setIconSize(QtCore.QSize(65, 65))
+        self.centralWidget = QtWidgets.QWidget(self)#MainWindow
         self.centralWidget.setObjectName("centralWidget")
         self.MAINTENANCE = QtWidgets.QPushButton(self.centralWidget)
         self.MAINTENANCE.setGeometry(QtCore.QRect(80, 290, 71, 71))
@@ -161,24 +167,29 @@ class Ui_Home(object):
 "border:0px")
         self.label_8.setText("")
         self.label_8.setObjectName("label_8")
-        Home.setCentralWidget(self.centralWidget)
+        self.setCentralWidget(self.centralWidget)
        
-        self.retranslateUi(Home)
-        QtCore.QMetaObject.connectSlotsByName(Home)
+        self.retranslateUi(self)
+        QtCore.QMetaObject.connectSlotsByName(self)
 
     def retranslateUi(self,Home):
         _translate = QtCore.QCoreApplication.translate
-        Home.setWindowTitle(_translate("Home", "Home"))
+        self.setWindowTitle(_translate("Home", "Home"))
         self.label.setText(_translate("Home", "<html><head/><body><p><span style=\" font-size:18pt;\">M E N U</span></p></body></html>"))
         self.label_2.setText(_translate("Home", "MAINTENANCE"))
         self.label_3.setText(_translate("Home", "SCHEDULE"))
         self.label_4.setText(_translate("Home", "STATUS"))
         self.label_5.setText(_translate("Home", "LAMP LIFE"))
         self.label_6.setText(_translate("Home", "ABOUT"))
-        self.shutdown.clicked.connect(self.shutdown)
 
+        #self.shutdown.clicked.connect(self.shutdown)
+        self.MAINTENANCE.clicked.connect(self.maintanence)
 
-
+    def maintanence(self):
+    	from Maintenance import Ui_Maintenance
+    	self.MAINTENANCE_UI=Ui_Maintenance()
+    	self.MAINTENANCE_UI.show()
+    	self.close()
     def shutdown(self):
         ##############################
         #add confirmation message box here
@@ -186,13 +197,4 @@ class Ui_Home(object):
         import os
         os.system('systemctl poweroff') 
 
-
-if __name__ == "__main__":
-    import sys
-    app = QtWidgets.QApplication(sys.argv)
-    Home = QtWidgets.QMainWindow()
-    ui = Ui_Home()
-    ui.setupUi(Home)
-    Home.show()
-    sys.exit(app.exec_())
 
