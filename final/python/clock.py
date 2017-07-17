@@ -1,18 +1,18 @@
 
-
 from PyQt5 import QtCore, QtGui, QtWidgets
-from Schedule import Schedule_window
+#from Schedule import Schedule_window
 class Ui_Clock(QtWidgets.QMainWindow):
     def __init__(self):
         super().__init__()
         self.init_ui()
     def init_ui(self):
         #MainWindow.setObjectName("MainWindow")
+        self.setAttribute(QtCore.Qt.WA_TranslucentBackground, True)
         self.setWindowModality(QtCore.Qt.NonModal)
         self.setEnabled(True)
-        self.resize(258, 328)
-        self.setStyleSheet("background-color: rgb(250, 215, 220);\n"
-"border-color: rgb(234, 85, 85);")
+        self.resize(800, 480)
+        #self.setStyleSheet("background-color: rgb(250, 215, 220);\n"
+#"border-color: rgb(234, 85, 85);")
         self.centralWidget = QtWidgets.QWidget(self)
         self.centralWidget.setObjectName("centralWidget")
         self.widget_2 = QtWidgets.QWidget(self.centralWidget)
@@ -244,15 +244,12 @@ class Ui_Clock(QtWidgets.QMainWindow):
         print("OK")
         global HOUR_CNTR
         global MINUTE_CNTR
-        back=Schedule_window()
-        back.Add_new_schedule.START_TM['HOUR']=HOUR_CNTR
-        back.Add_new_schedule.START_TM['MINUTE']=MINUTE_CNTR
+        #back=Schedule_window()
+        #back.Add_new_schedule.START_TM['HOUR']=HOUR_CNTR
+        #back.Add_new_schedule.START_TM['MINUTE']=MINUTE_CNTR
         self.close()
 
     def Cancel(self):
         print("Cancel")
         self.close()	        
-
-
-	
 
