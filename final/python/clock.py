@@ -1,126 +1,242 @@
+# -*- coding: utf-8 -*-
+
+# Form implementation generated from reading ui file 'self.ui'
+#
+# Created: Tue Jul 18 13:20:46 2017
+#      by: PyQt5 UI code generator 5.2.1
+#
+# WARNING! All changes made in this file will be lost!
 
 from PyQt5 import QtCore, QtGui, QtWidgets
-#from Schedule import Schedule_window
 class Ui_Clock(QtWidgets.QMainWindow):
     def __init__(self):
         super().__init__()
         self.init_ui()
     def init_ui(self):
-        #MainWindow.setObjectName("MainWindow")
-        self.setAttribute(QtCore.Qt.WA_TranslucentBackground, True)
+        
         self.setWindowModality(QtCore.Qt.NonModal)
         self.setEnabled(True)
-        self.resize(800, 480)
-        #self.setStyleSheet("background-color: rgb(250, 215, 220);\n"
-#"border-color: rgb(234, 85, 85);")
+        self.resize(720, 480)
+        self.setWindowOpacity(1.0)
+        self.setStyleSheet("background-color: rgb(250, 215, 220);\n"
+"border-color: rgb(234, 85, 85);")
         self.centralWidget = QtWidgets.QWidget(self)
         self.centralWidget.setObjectName("centralWidget")
-        self.widget_2 = QtWidgets.QWidget(self.centralWidget)
-        self.widget_2.setGeometry(QtCore.QRect(0, 120, 261, 71))
-        self.widget_2.setStyleSheet("background-color: rgb(183, 66, 66);")
-        self.widget_2.setObjectName("widget_2")
-        self.MINUTE_CENTER = QtWidgets.QLabel(self.widget_2)
-        self.MINUTE_CENTER.setGeometry(QtCore.QRect(157, 0, 91, 71))
-        self.MINUTE_CENTER.setStyleSheet("background-color: rgb(183, 66, 66);\n"
-"color: rgb(255, 255, 255);\n"
-"font: 48pt \"Sans Serif\";")
-        self.MINUTE_CENTER.setObjectName("MINUTE_CENTER")
-        self.widget_3 = QtWidgets.QWidget(self.widget_2)
-        self.widget_3.setGeometry(QtCore.QRect(120, 0, 16, 80))
-        self.widget_3.setStyleSheet("background-color: rgb(255,215,220);")
-        self.widget_3.setObjectName("widget_3")
-        self.label_3 = QtWidgets.QLabel(self.widget_3)
-        self.label_3.setGeometry(QtCore.QRect(-3, 0, 21, 61))
-        self.label_3.setStyleSheet("color: rgb(183, 66, 66);\n"
-"font: 48pt \"Sans Serif\";")
-        self.label_3.setObjectName("label_3")
-        self.HOUR_CENTER = QtWidgets.QLabel(self.widget_2)
-        self.HOUR_CENTER.setGeometry(QtCore.QRect(20, 0, 91, 71))
-        self.HOUR_CENTER.setStyleSheet("background-color: rgb(183, 66, 66);\n"
-"color: rgb(255, 255, 255);\n"
-"font: 48pt \"Sans Serif\";")
-        self.HOUR_CENTER.setObjectName("HOUR_CENTER")
-        self.HOUR_UP = QtWidgets.QPushButton(self.centralWidget)
-        self.HOUR_UP.setGeometry(QtCore.QRect(0, 83, 121, 37))
-        self.HOUR_UP.setStyleSheet("\n"
+        self.frame = QtWidgets.QFrame(self.centralWidget)
+        self.frame.setGeometry(QtCore.QRect(31, 30, 651, 331))
+        self.frame.setStyleSheet("background-color: rgb(238, 234, 234);")
+        self.frame.setFrameShape(QtWidgets.QFrame.StyledPanel)
+        self.frame.setFrameShadow(QtWidgets.QFrame.Raised)
+        self.frame.setObjectName("frame")
+        self.frame_2 = QtWidgets.QFrame(self.frame)
+        self.frame_2.setGeometry(QtCore.QRect(13, 10, 271, 231))
+        self.frame_2.setStyleSheet("background-color: rgb(250, 215, 220);")
+        self.frame_2.setFrameShape(QtWidgets.QFrame.StyledPanel)
+        self.frame_2.setFrameShadow(QtWidgets.QFrame.Raised)
+        self.frame_2.setObjectName("frame_2")
+        self.frame_3 = QtWidgets.QFrame(self.frame)
+        self.frame_3.setGeometry(QtCore.QRect(369, 10, 271, 231))
+        self.frame_3.setStyleSheet("background-color: rgb(250, 215, 220);")
+        self.frame_3.setFrameShape(QtWidgets.QFrame.StyledPanel)
+        self.frame_3.setFrameShadow(QtWidgets.QFrame.Raised)
+        self.frame_3.setObjectName("frame_3")
+        self.HOUR_CENTER_3 = QtWidgets.QLabel(self.frame)
+        self.HOUR_CENTER_3.setGeometry(QtCore.QRect(136, 110, 16, 71))
+        self.HOUR_CENTER_3.setStyleSheet("background-color: rgb(250, 215, 220);\n"
+"color: rgb(183, 66, 66);\n"
+"font: 48pt \"Sans Serif\";\n"
+"border:0px")
+        self.HOUR_CENTER_3.setObjectName("HOUR_CENTER_3")
+        self.HOUR_CENTER_4 = QtWidgets.QLabel(self.frame)
+        self.HOUR_CENTER_4.setGeometry(QtCore.QRect(491, 110, 16, 71))
+        self.HOUR_CENTER_4.setStyleSheet("background-color: rgb(250, 215, 220);\n"
+"color: rgb(183, 66, 66);\n"
+"font: 48pt \"Sans Serif\";\n"
+"border:0px")
+        self.HOUR_CENTER_4.setObjectName("HOUR_CENTER_4")
+        self.HOUR_DOWN_2 = QtWidgets.QPushButton(self.frame)
+        self.HOUR_DOWN_2.setEnabled(True)
+        self.HOUR_DOWN_2.setGeometry(QtCore.QRect(375, 187, 121, 37))
+        self.HOUR_DOWN_2.setStyleSheet("\n"
 "color: rgb(149, 50, 41);\n"
 "background-color: rgb(237, 158, 158);\n"
 "font: 18pt \"Sans Serif\";")
-        self.HOUR_UP.setObjectName("HOUR_UP")
-        self.MINUTE_UP = QtWidgets.QPushButton(self.centralWidget)
-        self.MINUTE_UP.setGeometry(QtCore.QRect(135, 83, 123, 37))
-        self.MINUTE_UP.setStyleSheet("\n"
-"color: rgb(149, 50, 41);\n"
-"background-color: rgb(237, 158, 158);\n"
-"font: 18pt \"Sans Serif\";")
-        self.MINUTE_UP.setObjectName("MINUTE_UP")
-        self.HOUR_DOWN = QtWidgets.QPushButton(self.centralWidget)
-        self.HOUR_DOWN.setEnabled(True)
-        self.HOUR_DOWN.setGeometry(QtCore.QRect(0, 190, 121, 37))
-        self.HOUR_DOWN.setStyleSheet("\n"
-"color: rgb(149, 50, 41);\n"
-"background-color: rgb(237, 158, 158);\n"
-"font: 18pt \"Sans Serif\";")
-        self.HOUR_DOWN.setObjectName("HOUR_DOWN")
-        self.MINUTE_DOWN = QtWidgets.QPushButton(self.centralWidget)
-        self.MINUTE_DOWN.setGeometry(QtCore.QRect(135, 190, 123, 37))
+        self.HOUR_DOWN_2.setText("")
+        icon = QtGui.QIcon()
+        icon.addPixmap(QtGui.QPixmap("final/icons/clock/down.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        self.HOUR_DOWN_2.setIcon(icon)
+        self.HOUR_DOWN_2.setIconSize(QtCore.QSize(46, 46))
+        self.HOUR_DOWN_2.setObjectName("HOUR_DOWN_2")
+        self.OK = QtWidgets.QPushButton(self.frame)
+        self.OK.setEnabled(True)
+        self.OK.setGeometry(QtCore.QRect(355, 260, 221, 51))
+        self.OK.setStyleSheet("border-color: rgb(255, 255, 255);\n"
+"font: 18pt \"Sans Serif\";\n"
+"background-color: rgb(255, 170, 170);\n"
+"color: rgb(106, 71, 71);")
+        self.OK.setObjectName("OK")
+        self.MINUTE_DOWN = QtWidgets.QPushButton(self.frame)
+        self.MINUTE_DOWN.setGeometry(QtCore.QRect(154, 190, 123, 37))
         self.MINUTE_DOWN.setStyleSheet("\n"
 "color: rgb(149, 50, 41);\n"
 "background-color: rgb(237, 158, 158);\n"
 "font: 18pt \"Sans Serif\";")
+        self.MINUTE_DOWN.setText("")
+        self.MINUTE_DOWN.setIcon(icon)
+        self.MINUTE_DOWN.setIconSize(QtCore.QSize(46, 46))
         self.MINUTE_DOWN.setObjectName("MINUTE_DOWN")
-        self.label_4 = QtWidgets.QLabel(self.centralWidget)
-        self.label_4.setGeometry(QtCore.QRect(20, 10, 241, 41))
-        self.label_4.setStyleSheet("color: rgb(240,110,110);\n"
+        self.MINUTE_UP_2 = QtWidgets.QPushButton(self.frame)
+        self.MINUTE_UP_2.setGeometry(QtCore.QRect(510, 80, 123, 37))
+        self.MINUTE_UP_2.setStyleSheet("\n"
+"color: rgb(149, 50, 41);\n"
+"background-color: rgb(237, 158, 158);\n"
+"font: 18pt \"Sans Serif\";")
+        self.MINUTE_UP_2.setText("")
+        icon1 = QtGui.QIcon()
+        icon1.addPixmap(QtGui.QPixmap("final/icons/clock/up.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        self.MINUTE_UP_2.setIcon(icon1)
+        self.MINUTE_UP_2.setIconSize(QtCore.QSize(46, 46))
+        self.MINUTE_UP_2.setObjectName("MINUTE_UP_2")
+        self.HOUR_UP = QtWidgets.QPushButton(self.frame)
+        self.HOUR_UP.setGeometry(QtCore.QRect(19, 83, 121, 37))
+        self.HOUR_UP.setStyleSheet("\n"
+"color: rgb(149, 50, 41);\n"
+"background-color: rgb(237, 158, 158);\n"
+"font: 18pt \"Sans Serif\";")
+        self.HOUR_UP.setText("")
+        self.HOUR_UP.setIcon(icon1)
+        self.HOUR_UP.setIconSize(QtCore.QSize(46, 46))
+        self.HOUR_UP.setObjectName("HOUR_UP")
+        self.MINUTE_CENTER_2 = QtWidgets.QLabel(self.frame)
+        self.MINUTE_CENTER_2.setGeometry(QtCore.QRect(510, 117, 122, 71))
+        self.MINUTE_CENTER_2.setStyleSheet("background-color: rgb(183, 66, 66);\n"
+"color: rgb(255, 255, 255);\n"
+"font: 48pt \"Sans Serif\";")
+        self.MINUTE_CENTER_2.setObjectName("MINUTE_CENTER_2")
+        self.label_5 = QtWidgets.QLabel(self.frame)
+        self.label_5.setGeometry(QtCore.QRect(400, 20, 210, 41))
+        self.label_5.setStyleSheet("color: rgb(184, 11, 5);\n"
+"background-color: rgb(250, 215, 220);\n"
 "border:0px;\n"
 "font: 24pt \"Sans Serif\";")
-        self.label_4.setObjectName("label_4")
-        self.CANCEL = QtWidgets.QPushButton(self.centralWidget)
-        self.CANCEL.setGeometry(QtCore.QRect(0, 260, 128, 51))
+        self.label_5.setObjectName("label_5")
+        self.CANCEL = QtWidgets.QPushButton(self.frame)
+        self.CANCEL.setGeometry(QtCore.QRect(78, 260, 211, 51))
         self.CANCEL.setStyleSheet("border-color: rgb(255, 255, 255);\n"
 "background-color: rgb(255, 170, 170);\n"
-"color: rgb(183, 66, 66);font: 18pt \"Sans Serif\";")
+"color: rgb(106, 71, 71);font: 18pt \"Sans Serif\";")
         self.CANCEL.setObjectName("CANCEL")
-        self.OK = QtWidgets.QPushButton(self.centralWidget)
-        self.OK.setEnabled(True)
-        self.OK.setGeometry(QtCore.QRect(130, 260, 128, 51))
-        self.OK.setStyleSheet("border-color: rgb(255, 255, 255);\n"
-"font: 18pt \"Sans Serif\";\n"
-"background-color: rgb(255, 170, 170);\n"
-"color: rgb(183, 66, 66);")
-        self.OK.setObjectName("OK")
+        self.MINUTE_DOWN_2 = QtWidgets.QPushButton(self.frame)
+        self.MINUTE_DOWN_2.setGeometry(QtCore.QRect(510, 187, 123, 37))
+        self.MINUTE_DOWN_2.setStyleSheet("\n"
+"color: rgb(149, 50, 41);\n"
+"background-color: rgb(237, 158, 158);\n"
+"font: 18pt \"Sans Serif\";")
+        self.MINUTE_DOWN_2.setText("")
+        self.MINUTE_DOWN_2.setIcon(icon)
+        self.MINUTE_DOWN_2.setIconSize(QtCore.QSize(46, 46))
+        self.MINUTE_DOWN_2.setObjectName("MINUTE_DOWN_2")
+        self.HOUR_UP_2 = QtWidgets.QPushButton(self.frame)
+        self.HOUR_UP_2.setGeometry(QtCore.QRect(375, 80, 121, 37))
+        self.HOUR_UP_2.setStyleSheet("\n"
+"color: rgb(149, 50, 41);\n"
+"background-color: rgb(237, 158, 158);\n"
+"font: 18pt \"Sans Serif\";")
+        self.HOUR_UP_2.setText("")
+        self.HOUR_UP_2.setIcon(icon1)
+        self.HOUR_UP_2.setIconSize(QtCore.QSize(46, 46))
+        self.HOUR_UP_2.setObjectName("HOUR_UP_2")
+        self.MINUTE_UP = QtWidgets.QPushButton(self.frame)
+        self.MINUTE_UP.setGeometry(QtCore.QRect(154, 83, 123, 37))
+        self.MINUTE_UP.setStyleSheet("\n"
+"color: rgb(149, 50, 41);\n"
+"background-color: rgb(237, 158, 158);\n"
+"font: 18pt \"Sans Serif\";")
+        self.MINUTE_UP.setText("")
+        self.MINUTE_UP.setIcon(icon1)
+        self.MINUTE_UP.setIconSize(QtCore.QSize(46, 46))
+        self.MINUTE_UP.setObjectName("MINUTE_UP")
+        self.HOUR_CENTER_2 = QtWidgets.QLabel(self.frame)
+        self.HOUR_CENTER_2.setGeometry(QtCore.QRect(376, 117, 119, 71))
+        self.HOUR_CENTER_2.setStyleSheet("background-color: rgb(183, 66, 66);\n"
+"color: rgb(255, 255, 255);\n"
+"font: 48pt \"Sans Serif\";")
+        self.HOUR_CENTER_2.setObjectName("HOUR_CENTER_2")
+        self.HOUR_DOWN = QtWidgets.QPushButton(self.frame)
+        self.HOUR_DOWN.setEnabled(True)
+        self.HOUR_DOWN.setGeometry(QtCore.QRect(19, 190, 121, 37))
+        self.HOUR_DOWN.setStyleSheet("\n"
+"color: rgb(149, 50, 41);\n"
+"background-color: rgb(237, 158, 158);\n"
+"font: 18pt \"Sans Serif\";")
+        self.HOUR_DOWN.setText("")
+        self.HOUR_DOWN.setIcon(icon)
+        self.HOUR_DOWN.setIconSize(QtCore.QSize(46, 46))
+        self.HOUR_DOWN.setObjectName("HOUR_DOWN")
+        self.MINUTE_CENTER = QtWidgets.QLabel(self.frame)
+        self.MINUTE_CENTER.setGeometry(QtCore.QRect(154, 120, 122, 71))
+        self.MINUTE_CENTER.setStyleSheet("background-color: rgb(183, 66, 66);\n"
+"color: rgb(255, 255, 255);\n"
+"font: 48pt \"Sans Serif\";")
+        self.MINUTE_CENTER.setObjectName("MINUTE_CENTER")
+        self.HOUR_CENTER = QtWidgets.QLabel(self.frame)
+        self.HOUR_CENTER.setGeometry(QtCore.QRect(20, 120, 119, 71))
+        self.HOUR_CENTER.setStyleSheet("background-color: rgb(183, 66, 66);\n"
+"color: rgb(255, 255, 255);\n"
+"font: 48pt \"Sans Serif\";")
+        self.HOUR_CENTER.setObjectName("HOUR_CENTER")
+        self.label_4 = QtWidgets.QLabel(self.frame)
+        self.label_4.setGeometry(QtCore.QRect(39, 20, 231, 41))
+        self.label_4.setStyleSheet("color: rgb(184, 11, 5);\n"
+"border:0px;\n"
+"font: 24pt \"Sans Serif\";\n"
+"background-color: rgb(250, 215, 220);")
+        self.label_4.setObjectName("label_4")
         self.setCentralWidget(self.centralWidget)
+        self.menuBar = QtWidgets.QMenuBar(self)
+        self.menuBar.setGeometry(QtCore.QRect(0, 0, 720, 34))
+        self.menuBar.setObjectName("menuBar")
+        self.setMenuBar(self.menuBar)
+        self.mainToolBar = QtWidgets.QToolBar(self)
+        self.mainToolBar.setObjectName("mainToolBar")
+        self.addToolBar(QtCore.Qt.TopToolBarArea, self.mainToolBar)
+        self.statusBar = QtWidgets.QStatusBar(self)
+        self.statusBar.setObjectName("statusBar")
+        self.setStatusBar(self.statusBar)
+
         self.retranslateUi()
         QtCore.QMetaObject.connectSlotsByName(self)
-####################################################################
-# Global varaiable declaration
-#
-####################################################################
-
     global HOUR_CNTR
     HOUR_CNTR = 0
     global MINUTE_CNTR
-    MINUTE_CNTR =0 
+    MINUTE_CNTR = 0 
+    global HOUR_CNTR_2
+    HOUR_CNTR_2 = 0
+    global MINUTE_CNTR_2
+    MINUTE_CNTR_2=0
 
     def retranslateUi(self):
-        HOUR="00"
-        MINUTE="00"
-        
         _translate = QtCore.QCoreApplication.translate
-        self.MINUTE_CENTER.setText(_translate("MainWindow", MINUTE))
-        self.label_3.setText(_translate("MainWindow", ":"))
-        self.HOUR_CENTER.setText(_translate("MainWindow", HOUR))
-        self.HOUR_UP.setText(_translate("MainWindow", "00"))
-        self.MINUTE_UP.setText(_translate("MainWindow", "01"))
-        self.HOUR_DOWN.setText(_translate("MainWindow", "23"))
-        self.MINUTE_DOWN.setText(_translate("MainWindow", "59"))
-        self.label_4.setText(_translate("MainWindow", "Starting Time"))
-        self.CANCEL.setText(_translate("MainWindow", "CANCEL"))
-        self.OK.setText(_translate("MainWindow", "OK"))
+        self.HOUR_CENTER_3.setText(_translate("self", ":"))
+        self.HOUR_CENTER_4.setText(_translate("self", ":"))
+        self.HOUR_DOWN_2.setText(_translate("self", ""))
+        self.OK.setText(_translate("self", "OK"))
+        self.MINUTE_DOWN.setText(_translate("self", ""))
+        self.MINUTE_UP_2.setText(_translate("self", ""))
+        self.HOUR_UP.setText(_translate("self", ""))
+        self.MINUTE_CENTER_2.setText(_translate("self", " 00"))
+        self.label_5.setText(_translate("self", "Ending Time "))
+        self.CANCEL.setText(_translate("self", "CANCEL"))
+        self.MINUTE_DOWN_2.setText(_translate("self", ""))
+        self.HOUR_UP_2.setText(_translate("self", ""))
+        self.MINUTE_UP.setText(_translate("self", ""))
+        self.HOUR_CENTER_2.setText(_translate("self", " 00"))
+        self.HOUR_DOWN.setText(_translate("self", ""))
+        self.MINUTE_CENTER.setText(_translate("self", " 00"))
+        self.HOUR_CENTER.setText(_translate("self", " 00"))
+        self.label_4.setText(_translate("self", "Starting Time"))
 
-###############################################################################
-# Function call
-###############################################################################
+#function call of duration
 
         self.HOUR_UP.clicked.connect(self.Hour_Up)
         self.MINUTE_UP.clicked.connect(self.Minute_Up)
@@ -129,12 +245,11 @@ class Ui_Clock(QtWidgets.QMainWindow):
         self.CANCEL.clicked.connect(self.Cancel)
         self.HOUR_DOWN.clicked.connect(self.Hour_Down)
 
-##############################################################################
-# Function defenition
-##############################################################################
-
-
-# hour up button response
+#function call of duration
+        self.HOUR_DOWN_2.clicked.connect(self.Hour_Down_2)
+        self.HOUR_UP_2.clicked.connect(self.Hour_Up_2)
+        self.MINUTE_UP_2.clicked.connect(self.Minute_Up_2)
+        self.MINUTE_DOWN_2.clicked.connect(self.Minute_Down_2)
 
     def Hour_Up(self ):
         print("hour up")
@@ -142,13 +257,8 @@ class Ui_Clock(QtWidgets.QMainWindow):
         HOUR_CNTR = self.HOUR_INC(HOUR_CNTR)
         HOUR_STR=str(HOUR_CNTR)
         HOUR_STR=HOUR_STR.zfill(2)
-        self.HOUR_CENTER.setText( HOUR_STR)
+        self.HOUR_CENTER.setText(" "+ HOUR_STR)
         print(HOUR_STR)
-
-        self.HOUR_UP.setText(str(self.HOUR_INC(HOUR_CNTR)).zfill(2))
-        
-        self.HOUR_DOWN.setText(str(self.HOUR_DEC(HOUR_CNTR)).zfill(2))
-
 
 # hour increment
         
@@ -167,13 +277,10 @@ class Ui_Clock(QtWidgets.QMainWindow):
         HOUR_CNTR = self.HOUR_DEC(HOUR_CNTR)
         HOUR_STR=str(HOUR_CNTR)
         HOUR_STR=HOUR_STR.zfill(2)
-        self.HOUR_CENTER.setText(HOUR_STR)
+        self.HOUR_CENTER.setText(" "+HOUR_STR)
         print(HOUR_STR)
 
-        self.HOUR_UP.setText(str(self.HOUR_INC(HOUR_CNTR)).zfill(2))
-
-        self.HOUR_DOWN.setText(str(self.HOUR_DEC(HOUR_CNTR)).zfill(2))
-
+      
 #hour decrement
 
     def HOUR_DEC(self,HOUR):
@@ -188,19 +295,13 @@ class Ui_Clock(QtWidgets.QMainWindow):
     def Minute_Up(self):
         print("minut up")
         global MINUTE_CNTR
-        MINUTE_CNTR = self.MINUTE_INC(MINUTE_CNTR)	
+        MINUTE_CNTR = self.MINUTE_INC(MINUTE_CNTR)  
         MINUTE_STR=str(MINUTE_CNTR)
         MINUTE_STR=MINUTE_STR.zfill(2)
-        self.MINUTE_CENTER.setText(MINUTE_STR)
+        self.MINUTE_CENTER.setText(" "+MINUTE_STR)
         print (MINUTE_STR)
 
-        MINUTE_UP = str(self.MINUTE_INC(MINUTE_CNTR))
-        MINUTE_UP = MINUTE_UP.zfill(2)
-        self.MINUTE_UP.setText(MINUTE_UP)
-
-        MINUTE_DOWN = str(self.MINUTE_DEC(MINUTE_CNTR))
-        MINUTE_DOWN = MINUTE_DOWN.zfill(2)
-        self.MINUTE_DOWN.setText(MINUTE_DOWN)
+        
 # minute increment funtion defenition
 
     def MINUTE_INC(self,MINUTE):
@@ -218,19 +319,9 @@ class Ui_Clock(QtWidgets.QMainWindow):
         MINUTE_CNTR = self.MINUTE_DEC(MINUTE_CNTR)
         MINUTE_STR = str(MINUTE_CNTR)
         MINUTE_STR=MINUTE_STR.zfill(2)
-        self.MINUTE_CENTER.setText(MINUTE_STR)
+        self.MINUTE_CENTER.setText(" "+MINUTE_STR)
 
-        MINUTE_UP = str(self.MINUTE_INC(MINUTE_CNTR))
-        MINUTE_UP = MINUTE_UP.zfill(2)
-        self.MINUTE_UP.setText(MINUTE_UP)
-
-        MINUTE_DOWN = str(self.MINUTE_DEC(MINUTE_CNTR))
-        MINUTE_DOWN = MINUTE_DOWN.zfill(2)
-        self.MINUTE_DOWN.setText(MINUTE_DOWN)
-        
-        
-        print (MINUTE_STR)	
-        
+             
 # minute decrement funtion defenition
 
     def MINUTE_DEC(self,MINUTE):
@@ -239,6 +330,92 @@ class Ui_Clock(QtWidgets.QMainWindow):
         else:
             MINUTE = 59
         return MINUTE
+
+
+#################################################
+#
+#
+###################################################
+    def Hour_Up_2(self ):
+        print("hour up")
+        global HOUR_CNTR_2
+        HOUR_CNTR_2 = self.HOUR_INC_2(HOUR_CNTR_2)
+        HOUR_STR_2=str(HOUR_CNTR_2)
+        HOUR_STR_2=HOUR_STR_2.zfill(2)
+        self.HOUR_CENTER_2.setText(" "+HOUR_STR_2)
+        print(HOUR_STR_2)
+  
+# hour increment
+        
+    def HOUR_INC_2(self,HOUR):
+        if HOUR<23:
+            HOUR = HOUR+1
+        else :
+            HOUR = 0
+        return HOUR
+
+# hour down button response
+
+    def Hour_Down_2(self):
+        print("hour down")
+        global HOUR_CNTR_2
+        HOUR_CNTR_2 = self.HOUR_DEC_2(HOUR_CNTR_2)
+        HOUR_STR_2=str(HOUR_CNTR_2)
+        HOUR_STR_2=HOUR_STR_2.zfill(2)
+        self.HOUR_CENTER_2.setText(" "+HOUR_STR_2)
+        print(HOUR_STR_2)
+
+      
+#hour decrement
+
+    def HOUR_DEC_2(self,HOUR):
+        if HOUR>0:
+            HOUR = HOUR-1
+        else:
+            HOUR = 23
+        return HOUR
+        
+# button minute up funtion defenition
+
+    def Minute_Up_2(self):
+        print("minut up")
+        global MINUTE_CNTR_2
+        MINUTE_CNTR_2 = self.MINUTE_INC_2(MINUTE_CNTR_2)  
+        MINUTE_STR_2=str(MINUTE_CNTR_2)
+        MINUTE_STR_2=MINUTE_STR_2.zfill(2)
+        self.MINUTE_CENTER_2.setText(" "+MINUTE_STR_2)
+        print (MINUTE_STR_2)
+
+
+# minute increment funtion defenition
+
+    def MINUTE_INC_2(self,MINUTE):
+        if MINUTE<59:
+            MINUTE = MINUTE+1
+        else :
+            MINUTE = 0
+        return MINUTE
+
+# minute down funtion defenition
+
+    def Minute_Down_2(self):
+        print("minute down")
+        global MINUTE_CNTR_2
+        MINUTE_CNTR_2 = self.MINUTE_DEC_2(MINUTE_CNTR_2)
+        MINUTE_STR_2 = str(MINUTE_CNTR_2)
+        MINUTE_STR_2=MINUTE_STR_2.zfill(2)
+        self.MINUTE_CENTER_2.setText(" "+MINUTE_STR_2)
+
+        
+# minute decrement funtion defenition
+
+    def MINUTE_DEC_2(self,MINUTE):
+        if MINUTE>0:
+            MINUTE = MINUTE-1
+        else:
+            MINUTE = 59
+        return MINUTE
+
 
     def Ok(self):
         print("OK")
@@ -251,5 +428,4 @@ class Ui_Clock(QtWidgets.QMainWindow):
 
     def Cancel(self):
         print("Cancel")
-        self.close()	        
-
+        self.close()            

@@ -171,19 +171,19 @@ class Ui_Clock(QtWidgets.QMainWindow):
         _translate = QtCore.QCoreApplication.translate
         self.label7.setText(_translate("MainWindow", ":"))
         self.label8.setText(_translate("MainWindow", ":"))
-        self.HOUR_DOWN_2.setText(_translate("MainWindow", "99"))
+        self.HOUR_DOWN_2.setText(_translate("MainWindow", ""))
         self.OK.setText(_translate("MainWindow", "OK"))
-        self.MINUTE_DOWN.setText(_translate("MainWindow", "59"))
-        self.MINUTE_UP_2.setText(_translate("MainWindow", "01"))
-        self.HOUR_UP.setText(_translate("MainWindow", "01"))
+        self.MINUTE_DOWN.setText(_translate("MainWindow", ""))
+        self.MINUTE_UP_2.setText(_translate("MainWindow", ""))
+        self.HOUR_UP.setText(_translate("MainWindow", ""))
         self.MINUTE_CENTER_2.setText(_translate("MainWindow", " 00"))
         self.label_5.setText(_translate("MainWindow", "Duration "))
         self.CANCEL.setText(_translate("MainWindow", "CANCEL"))
-        self.MINUTE_DOWN_2.setText(_translate("MainWindow", "59"))
-        self.HOUR_UP_2.setText(_translate("MainWindow", "01"))
-        self.MINUTE_UP.setText(_translate("MainWindow", "01"))
+        self.MINUTE_DOWN_2.setText(_translate("MainWindow", ""))
+        self.HOUR_UP_2.setText(_translate("MainWindow", ""))
+        self.MINUTE_UP.setText(_translate("MainWindow", ""))
         self.HOUR_CENTER_2.setText(_translate("MainWindow", " 00"))
-        self.HOUR_DOWN.setText(_translate("MainWindow", "23"))
+        self.HOUR_DOWN.setText(_translate("MainWindow", ""))
         self.MINUTE_CENTER.setText(_translate("MainWindow", " 00"))
         self.HOUR_CENTER.setText(_translate("MainWindow", " 00"))
         self.label_4.setText(_translate("MainWindow", "Starting Time"))
@@ -212,11 +212,6 @@ class Ui_Clock(QtWidgets.QMainWindow):
         self.HOUR_CENTER.setText(" "+ HOUR_STR)
         print(HOUR_STR)
 
-        self.HOUR_UP.setText(str(self.HOUR_INC(HOUR_CNTR)).zfill(2))
-        
-        self.HOUR_DOWN.setText(str(self.HOUR_DEC(HOUR_CNTR)).zfill(2))
-
-
 # hour increment
         
     def HOUR_INC(self,HOUR):
@@ -237,10 +232,7 @@ class Ui_Clock(QtWidgets.QMainWindow):
         self.HOUR_CENTER.setText(" "+HOUR_STR)
         print(HOUR_STR)
 
-        self.HOUR_UP.setText(str(self.HOUR_INC(HOUR_CNTR)).zfill(2))
-
-        self.HOUR_DOWN.setText(str(self.HOUR_DEC(HOUR_CNTR)).zfill(2))
-
+      
 #hour decrement
 
     def HOUR_DEC(self,HOUR):
@@ -261,13 +253,7 @@ class Ui_Clock(QtWidgets.QMainWindow):
         self.MINUTE_CENTER.setText(" "+MINUTE_STR)
         print (MINUTE_STR)
 
-        MINUTE_UP = str(self.MINUTE_INC(MINUTE_CNTR))
-        MINUTE_UP = MINUTE_UP.zfill(2)
-        self.MINUTE_UP.setText(MINUTE_UP)
-
-        MINUTE_DOWN = str(self.MINUTE_DEC(MINUTE_CNTR))
-        MINUTE_DOWN = MINUTE_DOWN.zfill(2)
-        self.MINUTE_DOWN.setText(MINUTE_DOWN)
+        
 # minute increment funtion defenition
 
     def MINUTE_INC(self,MINUTE):
@@ -287,17 +273,7 @@ class Ui_Clock(QtWidgets.QMainWindow):
         MINUTE_STR=MINUTE_STR.zfill(2)
         self.MINUTE_CENTER.setText(" "+MINUTE_STR)
 
-        MINUTE_UP = str(self.MINUTE_INC(MINUTE_CNTR))
-        MINUTE_UP = MINUTE_UP.zfill(2)
-        self.MINUTE_UP.setText(MINUTE_UP)
-
-        MINUTE_DOWN = str(self.MINUTE_DEC(MINUTE_CNTR))
-        MINUTE_DOWN = MINUTE_DOWN.zfill(2)
-        self.MINUTE_DOWN.setText(MINUTE_DOWN)
-        
-        
-        print (MINUTE_STR)  
-        
+             
 # minute decrement funtion defenition
 
     def MINUTE_DEC(self,MINUTE):
@@ -320,12 +296,7 @@ class Ui_Clock(QtWidgets.QMainWindow):
         HOUR_STR_2=HOUR_STR_2.zfill(2)
         self.HOUR_CENTER_2.setText(" "+HOUR_STR_2)
         print(HOUR_STR_2)
-
-        self.HOUR_UP_2.setText(str(self.HOUR_INC_2(HOUR_CNTR_2)).zfill(2))
-        
-        self.HOUR_DOWN_2.setText(str(self.HOUR_DEC_2(HOUR_CNTR_2)).zfill(2))
-
-
+  
 # hour increment
         
     def HOUR_INC_2(self,HOUR):
@@ -346,10 +317,7 @@ class Ui_Clock(QtWidgets.QMainWindow):
         self.HOUR_CENTER_2.setText(" "+HOUR_STR_2)
         print(HOUR_STR_2)
 
-        self.HOUR_UP_2.setText(str(self.HOUR_INC_2(HOUR_CNTR_2)).zfill(2))
-
-        self.HOUR_DOWN_2.setText(str(self.HOUR_DEC_2(HOUR_CNTR_2)).zfill(2))
-
+      
 #hour decrement
 
     def HOUR_DEC_2(self,HOUR):
@@ -370,13 +338,7 @@ class Ui_Clock(QtWidgets.QMainWindow):
         self.MINUTE_CENTER_2.setText(" "+MINUTE_STR_2)
         print (MINUTE_STR_2)
 
-        MINUTE_UP_2 = str(self.MINUTE_INC_2(MINUTE_CNTR_2))
-        MINUTE_UP_2 = MINUTE_UP_2.zfill(2)
-        self.MINUTE_UP_2.setText(MINUTE_UP_2)
 
-        MINUTE_DOWN_2 = str(self.MINUTE_DEC_2(MINUTE_CNTR_2))
-        MINUTE_DOWN_2 = MINUTE_DOWN_2.zfill(2)
-        self.MINUTE_DOWN_2.setText(MINUTE_DOWN_2)
 # minute increment funtion defenition
 
     def MINUTE_INC_2(self,MINUTE):
@@ -396,16 +358,6 @@ class Ui_Clock(QtWidgets.QMainWindow):
         MINUTE_STR_2=MINUTE_STR_2.zfill(2)
         self.MINUTE_CENTER_2.setText(" "+MINUTE_STR_2)
 
-        MINUTE_UP_2 = str(self.MINUTE_INC_2(MINUTE_CNTR_2))
-        MINUTE_UP_2 = MINUTE_UP_2.zfill(2)
-        self.MINUTE_UP_2.setText(MINUTE_UP_2)
-
-        MINUTE_DOWN_2 = str(self.MINUTE_DEC_2(MINUTE_CNTR_2))
-        MINUTE_DOWN_2 = MINUTE_DOWN_2.zfill(2)
-        self.MINUTE_DOWN_2.setText(MINUTE_DOWN_2)
-        
-        
-        print (MINUTE_STR_2)  
         
 # minute decrement funtion defenition
 
@@ -429,7 +381,3 @@ class Ui_Clock(QtWidgets.QMainWindow):
     def Cancel(self):
         print("Cancel")
         self.close()            
-
-
-
-
